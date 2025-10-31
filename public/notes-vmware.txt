@@ -1,0 +1,34 @@
+1.	The VMware Hypervisor consumes resources from the platform it is running on: 8vCPU, 8.0 GBytes RAM and 50 GB Hardisk. The Hardisk can be SSD, SATA or Magnetic drives.
+2.	Voice Mail is based on twelve active channels. Resource usage is additional to that needed by the MiVoice Business Virtual. (For lower numbers of users in vMCD, voice mail was based on eight active channels.)
+3.	Mitel publishes the application IOPS based on internal testing. To calculate the actual disk speed required to support these applications, the RAID type, disks in the array, and read and write workload must be taken into account.
+4.	Mitel has increased the OVA sizes from 150 to 250 for the SMB profile. If the customer has previously deployed a 150 user system, the OVA can be reduced to meet the 150 user specifications, as previously published.
+5.	The IOPS requirement stated for MiVoice Business Express does not include the additional requirement for MiCollab AWV video session recording.
+6.	Equal to #vCPUs at 1GHz each, provided 1 vCPU is one thread of a Hyper threaded CPU at 2GHz, or more.
+7.	4 partitions including the data one. Assumptions on the backup: backup of iPBX data only (no code back up), purge kept to default value, no iPBX traces (especially dump ip).
+8.	The numbers are only applicable for this application. Any additional applications would require additional resources.
+9.	The capacities listed above require MBG to be delicate to WebRTC calls. If the system is used for other purposes, such as SIP trunking or call recording, the capacities will get reduced.
+10.	Mitel recommends using Professional Services for any deployments with an expected number of concurrent WebRTC users greater than 124. It allows support of the appropriate deployment topology.
+11.	Transcoding video can be CPU intensive. To prevent your system from experiencing issues, instruct your users to limit the number of video calls that they place at any one time. Alternatively, enable transcoding only if your implementation includes devices that require it, such as the Mitel MiVoice Video Phone (UC360)."
+12.	The minimum disk storage space is defined. Additional disk storage space may need to be defined, depending on functional requirements. Refer to the Disk Space Requirements and File size Growth section of the Mitel CX, MiContact Center Business and MiVoice Analytics Engineering Guidelines.
+13.	Inclusion of MPA and/or iCall Suite as a Blade with MiVB increases the RAM requirement over the MiVoice Business without MPA. See the VMware required resource reservation and allocation table above for details.
+14.	In Heavy User/Bursty Traffic (for example, mass login/registration) resource definition improvements, large deployments of MiCollab (2500 users and 5000 users) might experience slowness in registration or web access following a system outage. This response can be noticeable or troublesome to the users. The MiCollab operational resource may need to be increased to the values referred in the table. For more information, refer to MiCollab Engineering Guidelines and MiVoice Border Gateway Engineering Guidelines.
+15.	Enterprise and Large Enterprise MiCollab deployments require a stand-alone MBG.
+16.	This is supported only with MiVoice Business platform in Release 9.8.
+17.	If using the SBC of the MiVoice 5000, add 1 CPU and 1 GB of RAM in the VM configuration. For each 1000 simultaneous calls, add 1 CPU in the VM configuration.
+18.	No additional resources are needed for MPA and CloudLink integrations.
+19.	The CPU, Memory, Storage Capacity, and CPU/memory reservations are set to their defaults at installation time. The network and storage capacity are estimates of what is required to achieve the best voice quality. Changing the Virtual Machine settings from vSphere may result in performance degradation or voice quality issues. This applies to all of the appliances that handle voice traffic, including MiVoice Business Virtual, NuPoint Virtual, MBG Virtual, MiCollab Virtual, and MiVoice Business Express.
+20.	The CPU reservation can be altered to support different system configurations. Note that the MiVoice Business 5000 user configuration is not available in the OVA, and must be configured manually. See Increasing resources for larger dimensions .
+21.	Each virtual machine has an additional memory cost—overhead needed by VMware Hypervisor to manage it. The overhead amount is based on the memory allocated and the number of vCPUs.
+22.	Though not packaged as an OVA, these virtual appliances consume the resources specified here. The Memory number is not a reservation, but a recommendation of what should be made available.
+23.	Hard disk space required depends on Operating System: Windows Server 2008 R2 (32/64 bit) requires 32 GB; Windows Server 2003 (32 bit) requires 16 GB; Windows 7 Enterprise, Professional, or Ultimate (32/64 bit) requires 25 GB; Windows XP Pro SP3 (32 bit) requires 10 GB.
+24.	MiContact Center Office ships with entry-level settings.
+25.	MiContact Center Office uses the Normal setting for CPU Shares and Memory Shares.
+26.	Although no resource reservations are required for Oria 4.0 SP2, it is recommended that the reservations noted above be applied manually for Oria 5.0+. 
+27.	MiVoice Enterprise Manager recommends 40 GB to manage two nodes, 120 GB to manage 50 nodes, and 160 GB to manage 250-1000 nodes.
+28.	For MiVoice MX-ONE, MiVoice 5000, and MiVoice Office 400, see the product documentation for the latest information.
+29.	CPU requirements have increased due to the addition of Spectre & Meltdown protections. The CPU reservation can be altered to support different system configurations. The default configuration for MBG Virtual Small Business supports 250 devices and 125 simultaneous calls. The default configuration for MBG Virtual Enterprise supports up to 5000 devices with a maximum of 500 simultaneous calls. Other configurations must be configured manually. See 'Increasing resources for larger dimensions' below.
+30.	The Network requirements stated here are for both LAN and WAN combined. For detailed information about deploying MiVoice Business Express, refer to the MiVoice Business Express Deployment Guide. This guide also includes Engineering Guidelines information.
+31.	In all the Enterprise configurations for MiCollab, the MiVoice Border Gateway must be used only for management. All media traffic is handled by a separate standalone MBG. The single-app MiCollab Client for 5000 users must be in co-located mode and all NuPoint UM traffic is handled by a separate standalone NuPoint UM (no longer available for purchase).
+32.	No additional resources are needed for MPA and CloudLink integrations.
+33.	If using the CloudLink Gateway integrated to the MiVoice 5000 in R8.3 or later release, add 1 CPU and 1GB or RAM in the VM configuration.
+
