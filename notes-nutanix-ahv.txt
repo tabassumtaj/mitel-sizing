@@ -1,0 +1,18 @@
+1.	The Prism Central Hypervisor consumes resources from the platform it is running on: 8 vCPU and 32 GB RAM. The hard disk should be SSD; it will not support SATA or Magnetic drives.
+2.	Voice Mail is based on twelve active channels. Resource usage is additional to that needed by the MiVoice Business Virtual. (For lower numbers of users in vMCD, voice mail was based on eight active channels.)
+3.	The CPU, Memory, Storage Capacity, and CPU/memory reservations are set to their defaults at installation time. The network and storage capacity are estimates of what is required to achieve the best voice quality. Changing the Virtual Machine settings from Prism Central may result in performance degradation or voice quality issues. This applies to all of the appliances that handle voice traffic, including MiVoice Business Virtual and MiVoice Border Gateway Virtual
+4.	The CPU reservation can be altered to support different system configurations.
+5.	Each virtual machine has an additional memory cost-overhead needed by Prism Central Hypervisor to manage it. The overhead amount is based on the memory allocated and the number of vCPUs. In Prism Central pc.2022.6.0.9, the memory overhead for a VM of the size of Mitel virtual appliances ranges from 100 MB to as high as 500 MB each.
+6.	Though not packaged as an ISO, these virtual appliances consume the resources specified here. The Memory number is not a reservation, but a recommendation of what should be made available.
+7.	Hard disk space required depends on Operating System: Windows Server 2016, (32/64 bit) requires 32 GB; Windows Server 2019 (32 bit) requires 16 GB; Windows Server 2022 (32/64 bit) requires 25 GB; Windows 10 and Windows 11 (32 bit) requires 10 GB.
+8.	All media traffic is handled by a separate standalone MiVoice Border Gateway. 
+9.	Mitel publishes the application IOPS based on internal testing. To calculate the actual disk speed required to support these applications, the RAID type, disks in the array, and read and write workload must be taken into account.
+10.	Mitel has increased the ISO sizes from 150 to 250 for the SMB profile. If the customer has previously deployed a 150 user system, the ISO can be reduced to meet the 150 user specifications, as previously published.
+11.	Equal to #vCPUs at 1GHz each, provided 1 vCPU is one thread of a Hyper threaded CPU at 2GHz, or more.
+12.	4 partitions including the data one. Assumptions on the backup: backup of iPBX data only (no code back up), purge kept to default value, no iPBX traces (especially dump ip).
+13.	The numbers are only applicable for this application. Any additional applications would require additional resources.
+14.	The capacities listed above require MiVoice Border Gateway to be delicate to streaming calls only. If the system is used for other purposes, such as SIP trunking or call recording, the capacities will reduce.
+15.	Transcoding video can be CPU intensive. To prevent your system from experiencing issues, instruct your users to limit the number of video calls that they place at any one time. Alternatively, enable transcoding only if your implementation includes devices that require it, such as the Mitel MiVoice Video Phone (UC360)."
+16.	Inclusion of MPA and/or iCall Suite as a Blade with MiVB increases the RAM requirement over the MiVoice Business without MPA. See the Nutanix AOS/Prism Central Hypervisor required resource reservation and allocation table above for details.
+17.	The minimum disk storage space is defined. Additional disk storage space may need to be defined, depending on functional requirements. Refer to the Disk Space Requirements and File size Growth section of the Mitel CX, MiContact Center Business and MiVoice Analytics Engineering Guidelines.
+

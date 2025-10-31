@@ -1,0 +1,1 @@
+If you are installing CloudLink Gateway as a blade on MiVoice Border Gateway, then you must allocate an additional 1 GB RAM and 1 vCPU.
